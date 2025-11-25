@@ -53,7 +53,7 @@ $("#post-acc-number").validate({
       type: "POST",
       url: `http://${
         location.hostname
-      }:8000/api/validation-workload-accession-no/${accession_no.val()}/${pat_id.val()}?mods_in_study=${mods_in_study}`,
+      }:9000/api/validation-workload-accession-no/${accession_no.val()}/${pat_id.val()}?mods_in_study=${mods_in_study}`,
       data: {
         study_iuid: study_iuid,
         accession_no: accession_no.val(),
@@ -84,7 +84,7 @@ $("#post-acc-number").validate({
                   type: "POST",
                   url: `http://${
                     location.hostname
-                  }:8000/api/update-workload-accession-no/${accession_no.val()}/${pat_id.val()}?mods_in_study=${mods_in_study}`,
+                  }:9000/api/update-workload-accession-no/${accession_no.val()}/${pat_id.val()}?mods_in_study=${mods_in_study}`,
                   data: {
                     study_iuid: study_iuid,
                     accession_no: accession_no.val(),
@@ -257,7 +257,7 @@ $("#edit-workload").validate({
     // ketika tombol ubah data diklik
     $.ajax({
       type: "POST",
-      url: `http://${location.hostname}:8000/api/update-workload/${study_iuid}`,
+      url: `http://${location.hostname}:9000/api/update-workload/${study_iuid}`,
       data: $(form).serialize(),
       beforeSend: function () {
         $(".loading").show();

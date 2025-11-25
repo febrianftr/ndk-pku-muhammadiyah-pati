@@ -40,7 +40,7 @@ $(document).ready(function () {
       });
       let join_radiographer = push_radiographer.join(", ");
 
-      let url = `http://${location.hostname}:8000/api/export-excel?from_updated_time=${from_workload}&to_updated_time=${to_workload}&mods_in_study=${join_mods_in_study}&priority_doctor=${join_priority_doctor}&radiographer_name=${join_radiographer}`;
+      let url = `http://${location.hostname}:9000/api/export-excel?from_updated_time=${from_workload}&to_updated_time=${to_workload}&mods_in_study=${join_mods_in_study}&priority_doctor=${join_priority_doctor}&radiographer_name=${join_radiographer}`;
       $.ajax({
         type: "GET",
         url: url,

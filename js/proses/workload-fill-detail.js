@@ -14,7 +14,7 @@ function isDefault(e, uid, pk) {
     if (result) {
       $.ajax({
         type: "POST",
-        url: `http://${location.hostname}:8000/api/workload-fill`,
+        url: `http://${location.hostname}:9000/api/workload-fill`,
         data: {
           pk: pk,
         },

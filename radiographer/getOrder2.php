@@ -84,14 +84,14 @@ while ($row = mysqli_fetch_array($query)) {
     // tidak menggunakan orderrefresh
     if ($study_iuid_mppsio == null && $study_iuid_pacsio == null && $fromorder == 'SIMRS') {
         $label = "<div class='alert alert-danger' role='alert'>GAGAL DIPERIKSA</div>";
-        $aksi = "<a href='http://$server_name:8000/api/create-xml/$uid' class='text-black'>
+        $aksi = "<a href='http://$server_name:9000/api/create-xml/$uid' class='text-black'>
                     <span class='btn yellow lighten-1 btn-intiwid1'>
                         <i class='fas fa-share' data-toggle='tooltip' title='ReSend'></i>
                     </span>
                 </a>";
     } else if ($study_iuid_mppsio == null && $study_iuid_pacsio == null && $fromorder != 'SIMRS') {
         $label = "<div class='alert alert-primary' role='alert'>BARU</div>";
-        $aksi = "<a href='http://$server_name:8000/api/create-xml/$uid' class='text-white'>
+        $aksi = "<a href='http://$server_name:9000/api/create-xml/$uid' class='text-white'>
                     <span class='btn blue lighten-1 btn-intiwid1'>
                         <i class='fas fa-share' data-toggle='tooltip' title='Send'></i>
                     </span>

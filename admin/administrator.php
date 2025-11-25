@@ -293,7 +293,7 @@ if ($_SESSION['level'] == "admin" || $_SESSION['level'] == "superadmin") {
 									<h3>Kop Surat</h3>
 									<hr style="margin-top: 5px;">
 									<a href="new_kop_surat.php" class="btn-add-admin"><i class="fas fa-plus"></i>&nbsp;&nbsp; Add</a>
-									<a href="http://<?= $_SERVER['SERVER_NAME']; ?>:8000/kop-surat" class="btn-view-admin"><i class="fas fa-table"></i>&nbsp;&nbsp; View</a>
+									<a href="http://<?= $_SERVER['SERVER_NAME']; ?>:9000/kop-surat" class="btn-view-admin"><i class="fas fa-table"></i>&nbsp;&nbsp; View</a>
 								</div>
 							</div>
 						</div>

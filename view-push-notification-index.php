@@ -195,7 +195,7 @@ if (isset($_POST["whatsapp_url_link"])) {
 //     $whatsapp = $_POST["phone"];
 //     try {
 //         $client = new Client([
-//             'base_uri' => "http://$server_name:8000/",
+//             'base_uri' => "http://$server_name:9000/",
 //         ]);
 //         $headers = [
 //             'headers' => [
@@ -383,7 +383,7 @@ if (isset($_POST["email_url_link"])) {
     $email = $_POST["email"];
     try {
         $client = new Client([
-            'base_uri' => "http://$server_name:8000/",
+            'base_uri' => "http://$server_name:9000/",
         ]);
         $headers = [
             'headers' => [
@@ -449,7 +449,7 @@ if (isset($_POST["email_url_expertise_image_pdf"]) || isset($_POST["email_url_im
     $email = $_POST["email"];
     try {
         $client = new Client([
-            'base_uri' => "http://$server_name:8000/",
+            'base_uri' => "http://$server_name:9000/",
         ]);
         $headers = [
             'headers' => [
@@ -522,7 +522,7 @@ if (isset($_POST["telegram_url_link"])) {
     $telegram_chat_id = $_POST["telegram_chat_id"];
     try {
         $client = new Client([
-            'base_uri' => "http://$server_name:8000/",
+            'base_uri' => "http://$server_name:9000/",
         ]);
         $headers = [
             'headers' => [
@@ -588,7 +588,7 @@ if (isset($_POST["telegram_url_expertise_image_pdf"]) || isset($_POST["telegram_
     $telegram_chat_id = $_POST["telegram_chat_id"];
     try {
         $client = new Client([
-            'base_uri' => "http://$server_name:8000/",
+            'base_uri' => "http://$server_name:9000/",
         ]);
         $headers = [
             'headers' => [
@@ -660,7 +660,7 @@ if (isset($_POST["telegram_url_expertise_image_pdf"]) || isset($_POST["telegram_
 if (isset($_POST["telegram_update_chatid"])) {
     try {
         $client = new Client([
-            'base_uri' => "http://$server_name:8000/",
+            'base_uri' => "http://$server_name:9000/",
         ]);
 
         $response = $client->request('GET', "telegram-update");

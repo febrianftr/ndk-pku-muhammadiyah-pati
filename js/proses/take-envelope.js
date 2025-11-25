@@ -28,8 +28,7 @@ $(document).ready(function () {
     submitHandler: function (form) {
       $.ajax({
         type: "POST",
-        url:
-          `http://${location.hostname}:8000/api/take-envelope/` + study_iuid,
+        url: `http://${location.hostname}:9000/api/take-envelope/` + study_iuid,
         data: $(form).serialize(),
         beforeSend: function () {
           $(".loading").show();

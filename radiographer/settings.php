@@ -128,7 +128,7 @@ if ($_SESSION['level'] == "radiographer") {
                 </div> -->
 
                 <!-- <div class="col-xs-1 settingclass">
-                  <a href="http://192.168.10.144:8000" target="_blank" style="text-decoration: none;">
+                  <a href="http://192.168.10.144:9000" target="_blank" style="text-decoration: none;">
                     <div class="thumbnail">
                       <img src="../image/radiation.png">
                       <center>Report Dose</center>

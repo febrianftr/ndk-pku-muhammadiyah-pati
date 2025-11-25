@@ -90,7 +90,7 @@ $(document).ready(function () {
         let uid = `1.2.40.0.13.1.${mrn}.${acc}.${no_foto}`;
         $.ajax({
           type: "POST",
-          url: `http://${location.hostname}:8000/api/registration-live`,
+          url: `http://${location.hostname}:9000/api/registration-live`,
           data: {
             uid: uid,
             acc: acc,

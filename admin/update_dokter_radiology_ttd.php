@@ -37,7 +37,7 @@ if ($_SESSION['level'] == "admin" || $_SESSION['level'] == "superadmin") {
 						<div class="row form-dokter">
 							<form id="kop-surat" method="post" enctype="multipart/form-data">
 								<div class="col-md-5 col-md-offset-1">
-									<iframe src="http://<?= $_SERVER['SERVER_NAME']; ?>:8000/dokter-radiology/edit/<?= $_GET['pk'] ?>" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
+									<iframe src="http://<?= $_SERVER['SERVER_NAME']; ?>:9000/dokter-radiology/edit/<?= $_GET['pk'] ?>" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe>
 								</div>
 							</form>
 						</div>

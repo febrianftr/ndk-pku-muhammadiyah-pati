@@ -29,7 +29,7 @@ $(document).ready(function () {
     submitHandler: function (form) {
       $.ajax({
         type: "POST",
-        url: `http://${location.hostname}:8000/api/registration`,
+        url: `http://${location.hostname}:9000/api/registration`,
         data: $(form).serialize(),
         beforeSend: function () {
           $(".loading").show();

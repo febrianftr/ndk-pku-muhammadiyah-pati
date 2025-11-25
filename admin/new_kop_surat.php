@@ -37,7 +37,7 @@ if ($_SESSION['level'] == "admin" || $_SESSION['level'] == "superadmin") {
 						<div class="row form-dokter">
 							<form id="kop-surat" method="post" enctype="multipart/form-data">
 								<div class="col-md-5 col-md-offset-1">
-									<iframe src="http://<?= $_SERVER['SERVER_NAME']; ?>:8000/kop-surat/create" frameborder="0"></iframe>
+									<iframe src="http://<?= $_SERVER['SERVER_NAME']; ?>:9000/kop-surat/create" frameborder="0"></iframe>
 								</div>
 							</form>
 						</div>

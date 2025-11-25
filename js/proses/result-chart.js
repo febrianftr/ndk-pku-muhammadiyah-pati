@@ -122,7 +122,7 @@ $(document).ready(function () {
 
       let join_mods_in_study = push_mods_in_study.join(",");
 
-      let url = `http://${location.hostname}:8000/api/result-chart?from=${from}&to=${to}&mods_in_study=${join_mods_in_study}`;
+      let url = `http://${location.hostname}:9000/api/result-chart?from=${from}&to=${to}&mods_in_study=${join_mods_in_study}`;
       $.ajax({
         type: "POST",
         url: url,
