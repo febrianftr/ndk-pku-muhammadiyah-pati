@@ -336,13 +336,13 @@ if ($_SESSION['level'] == "radiology") {
 											<label>Information Patient :</label>
 											<form action="" method="post">
 												<div class="radio-group">
-													<input type="radio" class="radio-input" id="normal" name="priority_doctor" value="normal" checked required>
+													<input type="radio" class="radio-input" id="normal" name="priority_doctor" value="normal" <?= $priority_doctor == 'normal' ? 'checked' : '' ?>>
 													<label class="radio-label-nd" for="normal">
 														<span class="radio-inner-circle"></span>
 														Normal
 													</label>
 
-													<input type="radio" class="radio-input" id="cito" name="priority_doctor" value="cito" required>
+													<input type="radio" class="radio-input" id="cito" name="priority_doctor" value="cito" <?= $priority_doctor == 'cito' ? 'checked' : '' ?>>
 													<label class="radio-label-nd" for="cito">
 														<span class="radio-inner-circle"></span>
 														Cito
