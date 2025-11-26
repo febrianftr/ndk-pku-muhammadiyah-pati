@@ -53,6 +53,7 @@ $no_foto = defaultValue($row['no_foto']);
 $address = defaultValue($row['address']);
 $name_dep = defaultValue($row['name_dep']);
 $named = defaultValue($row['named']);
+$prosedur = defaultValue($row['prosedur']);
 $dokraid_order = $row['dokradid'];
 $radiographer_name = defaultValue($row['radiographer_name']);
 $dokrad_name = defaultValue($row['dokrad_name']);
