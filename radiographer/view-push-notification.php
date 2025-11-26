@@ -19,7 +19,11 @@ if ($_SESSION['level'] == "radiographer") {
     <body>
         <?php include('../sidebar-index.php'); ?>
 
-        <?php include('../view-push-notification-index.php'); ?>
+        <div class="container-fluid" id="content2">
+            <div class="row">
+                <?php include('../view-push-notification-index.php'); ?>
+            </div>
+        </div>
 
         <br><br>
 
