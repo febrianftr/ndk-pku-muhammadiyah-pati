@@ -346,11 +346,11 @@
 
         <?php if ($_SESSION['level'] == 'refferal') { ?>
             <script type="text/javascript" src="js/jquery.min.js"></script>
-            <div class="menu-item1">
+            <!-- <div class="menu-item1">
                 <a href="workload-fill.php">
                     <li><img class="icon-sidebar" src="../image/new/history-nd.svg">Expertise History</li>
                 </a>
-            </div>
+            </div> -->
             <div class="menu-item1">
                 <a href="workload.php">
                     <li><img class="icon-sidebar" src="../image/new/query-nd.svg"> Query</li>

@@ -53,6 +53,7 @@ $no_foto = defaultValue($row['no_foto']);
 $address = defaultValue($row['address']);
 $name_dep = defaultValue($row['name_dep']);
 $named = defaultValue($row['named']);
+$prosedur = defaultValue($row['prosedur']);
 $dokraid_order = $row['dokradid'];
 $radiographer_name = defaultValue($row['radiographer_name']);
 $dokrad_name = defaultValue($row['dokrad_name']);
@@ -216,7 +217,7 @@ if ($_SESSION['level'] == "radiology") {
 									<nav aria-label="breadcrumb">
 										<ol class="breadcrumb">
 											<li class="breadcrumb-item"><a href="#">Home</a></li>
-											<li class="breadcrumb-item"><a href="dicom.php">Worklist</a></li>
+											<li class="breadcrumb-item"><a href="dicom.php">Workload Edit</a></li>
 											<li class="breadcrumb-item active">Expertise</li>
 										</ol>
 									</nav>
@@ -444,7 +445,7 @@ if ($_SESSION['level'] == "radiology") {
 																</a>
 															</td>
 															<td style="text-align: center;">
-																<a href="hapustemplate.php?uid=<?= $uid; ?>&template_id=<?= $template['template_id']; ?>&halaman=worklist" data-id="<?= $template['template_id'];  ?>" onclick="return confirm('Teruskan Menghapus Data?');">
+																<a href="hapustemplate.php?uid=<?= $uid; ?>&template_id=<?= $template['template_id']; ?>&halaman=workload-edit" data-id="<?= $template['template_id'];  ?>" onclick="return confirm('Teruskan Menghapus Data?');">
 																	<i data-toggle="tooltip" title="Delete Template" class="fas fa-trash fa-lg"></i>
 																</a>
 															</td>
