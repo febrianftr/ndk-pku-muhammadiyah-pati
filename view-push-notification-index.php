@@ -91,9 +91,9 @@ if (isset($_POST["whatsapp_url_link"])) {
     } else {
         $linkText = 'Link hasil radiologi';
         // production
-        $message_input_whatsapp = "http://$hostname[ip_publik]:8093/$link[link_simrs_expertise]/pasien.php?uid=$uid";
+        $message_input_whatsapp = "http://$hostname[ip_publik]:8089/$link[link_simrs_expertise]/pasien.php?uid=$uid";
         // development
-        // $message_input_whatsapp = "http://$hostname[ip_publik]:8093/medxa-demo-dev/pasien?uid=$uid";
+        // $message_input_whatsapp = "http://$hostname[ip_publik]:8089/medxa-demo-dev/pasien?uid=$uid";
     }
     try {
         $client = new Client([
@@ -275,7 +275,7 @@ if (isset($_POST["whatsapp_url_expertise_image_pdf"]) || isset($_POST["whatsapp_
     $api_token_instance = $row_auth["api_token_instance"];
     $chatId = $code_phone . $phone . $code_us;
     // upload file by url harus menggunakan IP publik untuk mengirimkan file ke server whatsapp.
-    $message_input_whatsapp = "http://$hostname[ip_publik]:8093/ndk/radiology/pdf/$dir/$uid.pdf";
+    $message_input_whatsapp = "http://$hostname[ip_publik]:8089/ndk/radiology/pdf/$dir/$uid.pdf";
     try {
         $client = new Client([
             'base_uri' => $api_url,

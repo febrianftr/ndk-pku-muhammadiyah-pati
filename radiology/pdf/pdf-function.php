@@ -241,7 +241,7 @@ function pdfProsesExpertise($uid, $pdf)
 
     if ($expertise['signature_dokter_radiologi'] == 'qr_code') {
         // jika ttd menggunakan signature QR CODE
-        $sign = $pdf->image($qr_code_ttd, 152, $pdf->GetY(), 25);
+        $sign = $pdf->image($qr_code_ttd, 163, $pdf->GetY(), 25);
     } else if ($expertise['signature_dokter_radiologi'] == 'signature_scan') {
         // jika ttd menggunakan signature scan image
         $pdf->image($dokrad_img, 150, $pdf->GetY(), 28);
@@ -305,7 +305,7 @@ function pdfProsesImage($uid, $series_iuids, $pdf)
             try {
                 $client = new Client();
                 $sop_iuid = $row_series_instance["sop_iuid"];
-                $link_dicom_jpg = "http://$_SERVER[SERVER_NAME]:9090/dcm4chee-arc/aets/DCM4CHEE/wado?requestType=WADO&studyUID=$uid&seriesUID=$series_iuid&objectUID=$sop_iuid";
+                $link_dicom_jpg = "http://192.168.0.60:9090/dcm4chee-arc/aets/DCM4CHEE/wado?requestType=WADO&studyUID=$uid&seriesUID=$series_iuid&objectUID=$sop_iuid";
                 // $link_dicom_jpg = "http://118.99.77.50:9090/dcm4chee-arc/aets/DCM4CHEE/wado?requestType=WADO&studyUID=1.3.12.2.1107.5.1.7.106949.30000024042307531537400000008";
                 // $dicom_jpg = @file_get_contents($link_dicom_jpg) === false ? $url . 'barcode-default.PNG' : $link_dicom_jpg;
 
