@@ -273,7 +273,7 @@ while ($row = mysqli_fetch_array($result)) {
         EDITPASIENFIRST . $study_iuid . EDITPASIENLAST . $icon_edit_pasien . EDITPASIENVERYLAST .
         CHANGEDOCTORFIRST . "'$study_iuid', '$dokradid', '$workload_status'" . CHANGEDOCTORLAST . $icon_change_doctor . CHANGEDOCTORCLASS  . CHANGEDOCTORVERYLAST .
         CHANGEEXPDATEFIRST . $study_iuid . CHANGEEXPDATELAST .
-        LINKOHIFFIRST . EXTLINKOHIF . $addonlinkohif . $row['study_iuid'] . EXTLINKOHIF . LINKOHIFLAST .
+        // LINKOHIFFIRST . EXTLINKOHIF . $addonlinkohif . $row['study_iuid'] . EXTLINKOHIF . LINKOHIFLAST .
         CHOOSESERIESFIRST . $study_iuid . CHOOSESERIESLAST .
         PUSHNOTIFICATIONFIRST . $study_iuid . PUSHNOTIFICATIONLAST .
         // COPYUIDFIRST . EXTLINKOHIF . $row['study_iuid'] . EXTLINKOHIF . COPYUIDLAST
