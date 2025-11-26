@@ -174,7 +174,7 @@ while ($row = mysqli_fetch_array($query)) {
             // LINKOHIFFIRST . EXTLINKOHIF . $addonlinkohif . $row['study_iuid'] . EXTLINKOHIF . LINKOHIFLAST;
         } else {
             $aksi = PDFFIRST . $study_iuid . PDFLAST .
-                HOROSFIRST . $study_iuid . HOROSLAST .
+                // HOROSFIRST . $study_iuid . HOROSLAST .
                 RADIANTFIRST . $study_iuid . RADIANTLAST .
                 OHIFNEWFIRST . $study_iuid . OHIFNEWLAST;
         }
