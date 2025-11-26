@@ -111,7 +111,7 @@ if (isset($_POST["whatsapp_url_link"])) {
         $selectedGreeting = $greetings[array_rand($greetings)];
 
         // isi pesan utama
-        $message = "*RADIOLOGI RSUD Cilacap*\n"
+        $message = "*RADIOLOGI RS Pku Muhammadiyah Pati*\n"
             . $selectedGreeting . "\n\n"
             . "*Nama:* $pat_name\n"
             . "*No Rekam Medis:* $pat_id\n"
@@ -119,7 +119,7 @@ if (isset($_POST["whatsapp_url_link"])) {
             . "Anda dapat melihat hasilnya melalui tautan berikut:\n"
             . "$message_input_whatsapp\n\n"
             . "_Hasil hanya bisa diakses selama 1 bulan dari tanggal pemeriksaan._\n"
-            . "Terima kasih,\n*RSUD CILACAP*";
+            . "Terima kasih,\n*RS Pku Muhammadiyah Pati*";
 
         // payload JSON
         $headers = [
@@ -292,7 +292,7 @@ if (isset($_POST["whatsapp_url_expertise_image_pdf"]) || isset($_POST["whatsapp_
         $selectedGreeting = $greetings[array_rand($greetings)];
 
         // isi pesan utama
-        $message = "*RADIOLOGI RSUD Cilacap*\n\n"
+        $message = "*RADIOLOGI RS Pku Muhammadiyah Pati*\n\n"
             . $selectedGreeting . "\n\n"
             . "*Nama:* $pat_name\n"
             . "*No Rekam Medis:* $pat_id\n"
@@ -300,7 +300,7 @@ if (isset($_POST["whatsapp_url_expertise_image_pdf"]) || isset($_POST["whatsapp_
             // . "Anda dapat melihat hasilnya melalui tautan berikut:\n"
             // . "$message_input_whatsapp\n\n"
             . "_Hasil berupa PDF, klik tautan file untuk membuka, Hubungi kami jika ada kesulitan._\n\n"
-            . "Terima kasih,\n*RSUD CILACAP*";
+            . "Terima kasih,\n*RS Pku Muhammadiyah Pati*";
 
         $headers = [
             'headers' => [
