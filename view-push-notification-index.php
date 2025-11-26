@@ -775,7 +775,7 @@ if (is_file("../radiology/pdf/image-share/$uid.pdf") && is_file("../radiology/pd
 
 ?>
 
-<div class="container-fluid" id="main">
+<div class="container-fluid">
     <div class="row">
         <div id="content1"><br><br><br>
             <div class="col-md-12 box-change-dokter table-box" style="height: auto;">
