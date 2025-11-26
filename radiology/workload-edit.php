@@ -302,17 +302,21 @@ if ($_SESSION['level'] == "radiology") {
 												</div> -->
 												<div class="col-md-12"><label>Viewer :</label></div>
 												<div class="col-sm-6">
-													<a href="<?= LINKHOROSFIRST . $study_iuid . LINKHOROSLAST; ?>" class="btn-viewer-nd btn-ohif-nd mb-2">
+													<!-- <a href="<?= LINKHOROSFIRST . $study_iuid . LINKHOROSLAST; ?>" class="btn-viewer-nd btn-ohif-nd mb-2">
 														<img src="../image/new/horos.png" style="width: 20px">
 														<p class="text-viewer-nd">Horos</p>
-													</a>
+													</a> -->
 													<a href="<?= LINKRADIANTFIRST . $study_iuid . LINKRADIANTLAST; ?>" target="_blank" class="btn-viewer-nd btn-radiant-nd mb-2">
 														<img src="../image/radiAnt.png" style="width: 20px">
 														<p class="text-viewer-nd">Radiant</p>
 													</a>
-													<a class="btn-viewer-nd btn-ino-nd mb-2" onclick="<?= LINKINOBITECFIRST . "'" . $study_iuid . "'" . LINKINOBITECLAST; ?>">
+													<!-- <a class="btn-viewer-nd btn-ino-nd mb-2" onclick="<?= LINKINOBITECFIRST . "'" . $study_iuid . "'" . LINKINOBITECLAST; ?>">
 														<img src="../image/new/inobitec.png" style="width: 20px">
 														<p class="text-viewer-nd">Inobitech</p>
+													</a> -->
+													<a href="<?= LINKHTMLFIRST . $study_iuid . LINKHTMLLAST; ?>" class="btn-viewer-nd btn-html-nd mb-2">
+														<img src="../image/new/html-nd.svg" style="width: 20px">
+														<p class="text-viewer-nd">HTML</p>
 													</a>
 												</div>
 												<div class="col-sm-6">
@@ -320,10 +324,7 @@ if ($_SESSION['level'] == "radiology") {
 														<img src="../image/new/ohif-nd.svg" style="width: 20px">
 														<p class="text-viewer-nd">Web</p>
 													</a>
-													<a href="<?= LINKHTMLFIRST . $study_iuid . LINKHTMLLAST; ?>" class="btn-viewer-nd btn-html-nd mb-2">
-														<img src="../image/new/html-nd.svg" style="width: 20px">
-														<p class="text-viewer-nd">HTML</p>
-													</a>
+
 												</div>
 											</div>
 										</div>
@@ -356,10 +357,10 @@ if ($_SESSION['level'] == "radiology") {
 										<div class="padding-rl-less">
 											<div class="container-fluid padding-rl-less mt-2">
 												<div class="row">
-													<div class="col-sm-4 pr-0">
+													<div class="col-sm-6 pr-0">
 														<button class="btn btn-worklist-nd btn-apr-nd m-0" id="save_edit" name="save_edit"><i class="fas fa-check-square"></i> Save Edit</button>
 													</div>
-													<div class="col-sm-4 pr-0">
+													<div class="col-sm-6 pr-0">
 														<!-- Button to Open the Modal -->
 														<button class="btn btn-worklist-nd btn-work-nd m-0" type="button" data-toggle="modal" data-target="#modal-insert-template"><i class="fas fa-file-export"></i> Save Template
 														</button>
