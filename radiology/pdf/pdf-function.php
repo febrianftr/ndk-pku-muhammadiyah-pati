@@ -236,8 +236,8 @@ function pdfProsesExpertise($uid, $pdf)
     $pdf->WriteHtml($fill);
     $pdf->WriteHTML("<br>");
     $pdf->WriteHTML("<br>");
-    $salam = "Cepu, " . defaultValueDate($study_datetime) . "";
-    $pdf->Cell(165, 9, $salam, 0, 1, 'R');
+    $salam = "Pati, " . defaultValueDate($study_datetime) . "";
+    $pdf->Cell(175, 9, $salam, 0, 1, 'R');
 
     if ($expertise['signature_dokter_radiologi'] == 'qr_code') {
         // jika ttd menggunakan signature QR CODE
