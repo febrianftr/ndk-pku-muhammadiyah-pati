@@ -287,7 +287,8 @@ while ($row = mysqli_fetch_array($result)) {
     }
     // ketika login refferal
   } else if ($level == 'refferal') {
-    $level = OHIFNEWFIRST . $study_iuid . OHIFNEWLAST .
+    $level =
+      // OHIFNEWFIRST . $study_iuid . OHIFNEWLAST .
       HTMLFIRST . $study_iuid . HTMLLAST;
   } else {
     $level = '-';
