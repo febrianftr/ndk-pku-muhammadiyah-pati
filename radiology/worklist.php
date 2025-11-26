@@ -370,92 +370,93 @@ if ($_SESSION['level'] == "radiology") {
 									<div class="table-box">
 										<div class="col-md-12">
 											<label>Information Patient :</label>
-											<div class="radio-group">
-												<input type="radio" class="radio-input" id="normal" name="priority_doctor" value="normal" checked required>
-												<label class="radio-label-nd" for="normal">
-													<span class="radio-inner-circle"></span>
-													Normal
-												</label>
+											<form action="" method="post">
+												<div class="radio-group">
+													<input type="radio" class="radio-input" id="normal" name="priority_doctor" value="normal" checked required>
+													<label class="radio-label-nd" for="normal">
+														<span class="radio-inner-circle"></span>
+														Normal
+													</label>
 
-												<input type="radio" class="radio-input" id="cito" name="priority_doctor" value="cito" required>
-												<label class="radio-label-nd" for="cito">
-													<span class="radio-inner-circle"></span>
-													Cito
-												</label>
-											</div>
+													<input type="radio" class="radio-input" id="cito" name="priority_doctor" value="cito" required>
+													<label class="radio-label-nd" for="cito">
+														<span class="radio-inner-circle"></span>
+														Cito
+													</label>
+												</div>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-3 mb-3 padding-rl-nd">
 									<div class="table-box">
-										<form action="" method="post">
-											<div class="padding-rl-less">
-												<div class="container-fluid padding-rl-less mt-2">
-													<div class="row">
-														<div class="col-sm-4 pr-0">
-															<button class="btn btn-worklist-nd btn-apr-nd m-0" id="save_edit" name="save_approve"><i class="fas fa-check-square"></i> Approve</button>
-														</div>
-														<div class="col-sm-4 pr-0">
-															<!-- Button to Open the Modal -->
-															<button class="btn btn-worklist-nd btn-work-nd m-0" type="button" data-toggle="modal" data-target="#modal-insert-template"><i class="fas fa-file-export"></i> Save Template
-															</button>
-														</div>
-														<div class="col-sm-4">
-															<button class="btn btn-worklist-nd btn-work-nd m-0" id="save_draft" name="save_draft" onclick="return confirm('Are you sure save draft?');"><i class="fas fa-save"></i> Save Draft</button>
-														</div>
+
+										<div class="padding-rl-less">
+											<div class="container-fluid padding-rl-less mt-2">
+												<div class="row">
+													<div class="col-sm-4 pr-0">
+														<button class="btn btn-worklist-nd btn-apr-nd m-0" id="save_edit" name="save_approve"><i class="fas fa-check-square"></i> Approve</button>
+													</div>
+													<div class="col-sm-4 pr-0">
+														<!-- Button to Open the Modal -->
+														<button class="btn btn-worklist-nd btn-work-nd m-0" type="button" data-toggle="modal" data-target="#modal-insert-template"><i class="fas fa-file-export"></i> Save Template
+														</button>
+													</div>
+													<div class="col-sm-4">
+														<button class="btn btn-worklist-nd btn-work-nd m-0" id="save_draft" name="save_draft" onclick="return confirm('Are you sure save draft?');"><i class="fas fa-save"></i> Save Draft</button>
 													</div>
 												</div>
-												<div class="">
-													<div class="work-patient6">
-														<input type="hidden" name="uid" value="<?= $uid; ?>">
-														<input type="hidden" name="username" value="<?= $username; ?>">
-														<?php
-														@$template_id = $_GET['template_id'];
-														$template = mysqli_fetch_assoc(mysqli_query(
-															$conn,
-															"SELECT $select_template 
+											</div>
+											<div class="">
+												<div class="work-patient6">
+													<input type="hidden" name="uid" value="<?= $uid; ?>">
+													<input type="hidden" name="username" value="<?= $username; ?>">
+													<?php
+													@$template_id = $_GET['template_id'];
+													$template = mysqli_fetch_assoc(mysqli_query(
+														$conn,
+														"SELECT $select_template 
 												FROM $table_template
 												WHERE template_id = '$template_id'"
-														));
-														if ($template_id == "") {
-															$fill = $row['fill'];
-														} else {
-															$fill = $template['fill'];
-														}
-														?>
-														<br>
-														<div class="textarea-ckeditor" style="border: none;">
-															<textarea class="ckeditor" name="fill" id="ckeditor">
+													));
+													if ($template_id == "") {
+														$fill = $row['fill'];
+													} else {
+														$fill = $template['fill'];
+													}
+													?>
+													<br>
+													<div class="textarea-ckeditor" style="border: none;">
+														<textarea class="ckeditor" name="fill" id="ckeditor">
 														<?= $fill; ?>
 													</textarea>
-														</div>
-														<div class="kotak">
-															<!---POP UP -->
-															<div class="container">
-																<!-- Modal -->
-																<div class="modal fade" id="modal-insert-template" role="dialog">
-																	<div class="modal-dialog">
-																		<div class="modal-content">
-																			<div class="modal-header">
-																				<h4 class="modal-title">Insert Title</h4><br />
-																				<button type="button" class="close" data-dismiss="modal">&times;</button>
-																			</div>
-																			<div class="modal-body-template" style="padding: 10px;">
-																				<input class="form-control" type="text" name="title" value="" placeholder="Insert Tittle">
-																			</div>
-																			<div class="modal-footer">
-																				<button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
-																				<button style="border-radius: 5px; font-weight: bold; margin-bottom:4px;" class=" btn btn-success" id="save_template" name="save_template">Save</button>
-																			</div>
+													</div>
+													<div class="kotak">
+														<!---POP UP -->
+														<div class="container">
+															<!-- Modal -->
+															<div class="modal fade" id="modal-insert-template" role="dialog">
+																<div class="modal-dialog">
+																	<div class="modal-content">
+																		<div class="modal-header">
+																			<h4 class="modal-title">Insert Title</h4><br />
+																			<button type="button" class="close" data-dismiss="modal">&times;</button>
+																		</div>
+																		<div class="modal-body-template" style="padding: 10px;">
+																			<input class="form-control" type="text" name="title" value="" placeholder="Insert Tittle">
+																		</div>
+																		<div class="modal-footer">
+																			<button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+																			<button style="border-radius: 5px; font-weight: bold; margin-bottom:4px;" class=" btn btn-success" id="save_template" name="save_template">Save</button>
 																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
-														<!-- END OF POP UP -->
 													</div>
+													<!-- END OF POP UP -->
 												</div>
 											</div>
+										</div>
 										</form>
 										<div class="template-normal-nd">
 											<input type="text" class="form-control" placeholder="search by tittle.. " id="myInput" style="margin: 0 0 7px 0; width: 100%;">
