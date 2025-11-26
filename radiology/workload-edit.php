@@ -357,16 +357,14 @@ if ($_SESSION['level'] == "radiology") {
 											<div class="container-fluid padding-rl-less mt-2">
 												<div class="row">
 													<div class="col-sm-4 pr-0">
-														<button class="btn btn-worklist-nd btn-apr-nd m-0" id="save_edit" name="save_approve"><i class="fas fa-check-square"></i> Approve</button>
+														<button class="btn btn-worklist-nd btn-apr-nd m-0" id="save_edit" name="save_edit"><i class="fas fa-check-square"></i> Save Edit</button>
 													</div>
 													<div class="col-sm-4 pr-0">
 														<!-- Button to Open the Modal -->
 														<button class="btn btn-worklist-nd btn-work-nd m-0" type="button" data-toggle="modal" data-target="#modal-insert-template"><i class="fas fa-file-export"></i> Save Template
 														</button>
 													</div>
-													<div class="col-sm-4">
-														<button class="btn btn-worklist-nd btn-work-nd m-0" id="save_draft" name="save_draft" onclick="return confirm('Are you sure save draft?');"><i class="fas fa-save"></i> Save Draft</button>
-													</div>
+
 												</div>
 											</div>
 											<div class="">
