@@ -468,7 +468,7 @@ if (isset($_POST["save_copy_series"])) {
                                         <div class="card card-nd">
                                             <?php
                                             if ($_SERVER['SERVER_NAME'] == $hostname['ip_publik']) {
-                                                $port = '20001';
+                                                $port = '19898';
                                             } else {
                                                 $port = '19898';
                                             }
