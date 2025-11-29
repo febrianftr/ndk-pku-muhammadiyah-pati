@@ -48,7 +48,7 @@ function pdfProsesExpertise($uid, $pdf)
     mysqli_stmt_execute($stmt);
     $row = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
 
-    $pat_name = substr(removeCharacter(ucwords(strtolower(defaultValue($row['pat_name'])))), 0, 23);
+    $pat_name = substr(removeCharacter(ucwords(strtoupper(defaultValue($row['pat_name'])))), 0, 26);
     $pat_sex = $row['pat_sex'];
     $pat_birthdate = $row['pat_birthdate'];
     $age = diffDate($pat_birthdate);
@@ -58,7 +58,7 @@ function pdfProsesExpertise($uid, $pdf)
     $study_desc_two = substr(ucwords(strtolower(defaultValue($row['prosedur']))), 32, 32);
     $pat_id = defaultValue($row['pat_id']);
     $no_foto = defaultValue($row['no_foto']);
-    $address = ucwords(strtolower(defaultValue($row['address'])));
+    $address = substr(ucwords(strtoupper(defaultValue($row['address']))), 0, 25);
     $name_dep = substr(defaultValue($row['name_dep']), 0, 29);
     $named = substr(defaultValue($row['named']), 0, 29);
 
@@ -69,7 +69,7 @@ function pdfProsesExpertise($uid, $pdf)
         $klinis = !empty($spc_needs_array[1]) ? $spc_needs_array[1] : "-";
     }
 
-    $spc_needs_one = ucfirst(substr(defaultValue($klinis), 0, 40));
+    $spc_needs_one = ucfirst(substr(strtolower(defaultValue($klinis)), 0, 32));
     $spc_needs_two = substr(defaultValue($klinis), 40, 40);
     $fill = $row['fill'];
     $signature = $row['signature'];
@@ -146,7 +146,7 @@ function pdfProsesExpertise($uid, $pdf)
 
     $pdf->Cell(28, 5, 'No RM', 0, 0, 'L');
     $pdf->Cell(3, 5, ':', 0, 0, 'L');
-    $pdf->Cell(45, 5, $pat_id, 0, 0, 'L');
+    $pdf->Cell(60, 5, $pat_id, 0, 0, 'L');
     // ------------------
     $pdf->Cell(35, 5, 'Ruangan/Poliklinik', 0, 0, 'L');
     $pdf->Cell(3, 5, ':', 0, 0, 'L');
@@ -154,35 +154,43 @@ function pdfProsesExpertise($uid, $pdf)
     // -----------------
     $pdf->Cell(28, 5, 'Nama', 0, 0, 'L');
     $pdf->Cell(3, 5, ':', 0, 0, 'L');
-    $pdf->Cell(45, 5, $pat_name, 0, 0, 'L');
+    $pdf->Cell(60, 5, $pat_name, 0, 0, 'L');
     // ------------------
-    // $pdf->Cell(35, 5, 'Tanggal Pemeriksaan', 0, 0, 'L');
-    // $pdf->Cell(3, 5, ':', 0, 0, 'L');
-    // $pdf->Cell(65, 5, defaultValueDate($study_datetime), 0, 1, 'L');
-    // ------------------
-    $pdf->Cell(35, 5, 'Jam Mulai', 0, 0, 'L');
+    $pdf->Cell(35, 5, 'Dokter Pengirim', 0, 0, 'L');
     $pdf->Cell(3, 5, ':', 0, 0, 'L');
-    $pdf->Cell(45, 5, defaultValueTime($updated_time), 0, 1, 'L');
+    $pdf->Cell(65, 5, $named, 0, 1, 'L');
     // -----------------
     $pdf->Cell(28, 5, 'Tgl Lahir', 0, 0, 'L');
     $pdf->Cell(3, 5, ':', 0, 0, 'L');
-    $pdf->Cell(45, 5, defaultValueDate($pat_birthdate), 0, 0, 'L');
+    $pdf->Cell(60, 5, defaultValueDate($pat_birthdate), 0, 0, 'L');
+    // ------------------
+    $pdf->Cell(35, 5, 'Tanggal Pemeriksaan', 0, 0, 'L');
+    $pdf->Cell(3, 5, ':', 0, 0, 'L');
+    $pdf->Cell(65, 5, defaultValueDate($study_datetime), 0, 1, 'L');
+    // ------------------
+    $pdf->Cell(28, 5, 'Alamat', 0, 0, 'L');
+    $pdf->Cell(3, 5, ':', 0, 0, 'L');
+    $pdf->Cell(60, 5, $address, 0, 0, 'L');
+    // ------------------
+    $pdf->Cell(35, 5, 'Jam Mulai', 0, 0, 'L');
+    $pdf->Cell(3, 5, ':', 0, 0, 'L');
+    $pdf->Cell(60, 5, defaultValueTime($updated_time), 0, 1, 'L');
+    // -----------------
+    $pdf->Cell(28, 5, 'Jenis Kelamin', 0, 0, 'L');
+    $pdf->Cell(3, 5, ':', 0, 0, 'L');
+    $pdf->Cell(60, 5, $pat_sex_ind, 0, 0, 'L');
     // -----------------
     $pdf->Cell(35, 5, 'Jam Selesai', 0, 0, 'L');
     $pdf->Cell(3, 5, ':', 0, 0, 'L');
     $pdf->Cell(65, 5, defaultValueTime($approved_at), 0, 1, 'L');
-    // -----------------
-    $pdf->Cell(28, 5, 'Jenis Kelamin', 0, 0, 'L');
+    //-------------------
+    $pdf->Cell(28, 5, 'Klinis', 0, 0, 'L');
     $pdf->Cell(3, 5, ':', 0, 0, 'L');
-    $pdf->Cell(45, 5, $pat_sex_ind, 0, 0, 'L');
+    $pdf->Cell(60, 5, trim($spc_needs_one), 0, 0, 'L');
     // -------------------
     $pdf->Cell(35, 5, 'Waktu Pemeriksaan', 0, 0, 'L');
     $pdf->Cell(3, 5, ':', 0, 0, 'L');
     $pdf->Cell(65, 5, spendTime($updated_time, $approved_at, $status), 0, 1, 'L');
-    //-------------------
-    $pdf->Cell(28, 5, 'Klinis', 0, 0, 'L');
-    $pdf->Cell(3, 5, ':', 0, 1, 'L');
-    $pdf->Cell(55, 5, trim($spc_needs_one), 0, 0, 'L');
     // -----------------
     // $pdf->Cell(35, 5, '', 0, 0, 'L');
     // $pdf->Cell(3, 5, '', 0, 0, 'L');
@@ -199,9 +207,9 @@ function pdfProsesExpertise($uid, $pdf)
     // -----------------
 
     // -----------------
-    $pdf->Cell(35, 5, '', 0, 0, 'L');
-    $pdf->Cell(3, 5, '', 0, 0, 'L');
-    $pdf->Cell(65, 5, $study_desc_two, 0, 1, 'L');
+    // $pdf->Cell(35, 5, '', 0, 0, 'L');
+    // $pdf->Cell(3, 5, '', 0, 0, 'L');
+    // $pdf->Cell(65, 5, $study_desc_two, 0, 1, 'L');
     $pdf->Line(16, 73, 198, 73);
     $fill = str_replace("&nbsp;", " ", $fill);
     $fill = str_replace("&ndash;", "-", $fill);
