@@ -102,10 +102,10 @@ if (isset($_POST["whatsapp_url_link"])) {
 
         // Daftar sapaan acak
         $greetings = [
-            "Halo *$pat_name*, hasil pemeriksaan radiologi Anda sudah tersedia.",
-            "Hai *$pat_name*, hasil radiologi Anda sudah dapat diakses.",
-            "Halo *$pat_name*, kami informasikan hasil radiologi Anda telah siap.",
-            "Hai *$pat_name*, hasil radiologi Anda telah selesai dan bisa dilihat.",
+            "Assalamu'alaikum, wr wb *$pat_name*, hasil pemeriksaan radiologi Anda sudah tersedia.",
+            "Assalamu'alaikum, warahmatullahi wabarakatuh *$pat_name*, hasil radiologi Anda sudah dapat diakses.",
+            "Assalamu'alaikum, wr. wb *$pat_name*, kami informasikan hasil radiologi Anda telah siap.",
+            "Assalamu'alaikum, *$pat_name*, hasil radiologi Anda telah selesai dan bisa dilihat.",
         ];
         // greeting secara acak
         $selectedGreeting = $greetings[array_rand($greetings)];
@@ -283,16 +283,16 @@ if (isset($_POST["whatsapp_url_expertise_image_pdf"]) || isset($_POST["whatsapp_
 
         // Daftar sapaan acak
         $greetings = [
-            "Halo *$pat_name*, hasil pemeriksaan radiologi Anda sudah tersedia.",
-            "Hai *$pat_name*, hasil radiologi Anda sudah dapat diakses.",
-            "Kepada Tn/Ny *$pat_name*, kami informasikan hasil radiologi Anda telah siap.",
-            "Hallo *$pat_name*, hasil radiologi Anda telah selesai dan bisa dilihat.",
+            "Assalamu'alaikum, wr wb, hasil pemeriksaan radiologi Anda sudah tersedia.",
+            "Assalamu'alaikum, warahmatullahi wabarakatuh, hasil radiologi Anda sudah dapat diakses.",
+            "Assalamu'alaikum, wr. wb, kami informasikan hasil radiologi Anda telah siap.",
+            "Assalamu'alaikum, hasil radiologi Anda telah selesai dan bisa dilihat.",
         ];
         // greeting secara acak
         $selectedGreeting = $greetings[array_rand($greetings)];
 
         // isi pesan utama
-        $message = "*RADIOLOGI RS Pku Muhammadiyah Pati*\n\n"
+        $message = "Kami dari Instalasi Radiologi RSU Fastabiq Sehat PKU Muhammadiyah menginformasikan bahwa hasil pemeriksaan radiologi Anda sudah dapat diakses.\n\n"
             . $selectedGreeting . "\n\n"
             . "*Nama:* $pat_name\n"
             . "*No Rekam Medis:* $pat_id\n"
@@ -300,7 +300,7 @@ if (isset($_POST["whatsapp_url_expertise_image_pdf"]) || isset($_POST["whatsapp_
             // . "Anda dapat melihat hasilnya melalui tautan berikut:\n"
             // . "$message_input_whatsapp\n\n"
             . "_Hasil berupa PDF, klik tautan file untuk membuka, Hubungi kami jika ada kesulitan._\n\n"
-            . "Terima kasih,\n*RS Pku Muhammadiyah Pati*";
+            . "Terima kasih,\n*Wassalamu'alaikum.*";
 
         $headers = [
             'headers' => [

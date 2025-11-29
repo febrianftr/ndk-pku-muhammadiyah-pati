@@ -19,8 +19,8 @@ define('DICOMNEWLAST', '"><span class="btn rgba-stylish-slight btn-inti2" style=
 
 // HTML
 if ($_SERVER['SERVER_NAME'] == $hostname['ip_publik'] or $_SERVER['SERVER_NAME'] == '49.128.176.141') {
-    define('HTMLFIRST', '<a class="dropdown-item dropdown-item1" href="http://' . $_SERVER['SERVER_NAME'] . ':20001/holan/viewer.html?studyUID=');
-    define('LINKHTMLFIRST', 'http://' . $_SERVER['SERVER_NAME'] . ':20001/holan/viewer.html?studyUID=');
+    define('HTMLFIRST', '<a class="dropdown-item dropdown-item1" href="http://' . $_SERVER['SERVER_NAME'] . ':19898/holan/viewer.html?studyUID=');
+    define('LINKHTMLFIRST', 'http://' . $_SERVER['SERVER_NAME'] . ':19898/holan/viewer.html?studyUID=');
 } else {
     define('HTMLFIRST', '<a class="dropdown-item dropdown-item1" href="http://' . $_SERVER['SERVER_NAME'] . ':19898/holan/viewer.html?studyUID=');
     define('LINKHTMLFIRST', 'http://' . $_SERVER['SERVER_NAME'] . ':19898/holan/viewer.html?studyUID=');
@@ -218,7 +218,7 @@ define('DICOMWORKLISTLAST', '"class="button8 delete1"><img src="../image/desktop
 define('DICOMNEWWORKLISTFIRST', '<a href="http://' . $_SERVER['SERVER_NAME'] . ':9090/weasis-pacs-connector/IHEInvokeImageDisplay?studyUID=');
 define('DICOMNEWWORKLISTLAST', '"class="button8 delete1"><img src="../image/desktop.svg" style="width: 50px;"><br> <span> Dicom Viewer</span></a>');
 if ($_SERVER['SERVER_NAME'] == $hostname['ip_publik'] or $_SERVER['SERVER_NAME'] == '49.128.176.141') {
-    define('HTMLWORKLISTFIRST', '<a href="http://' . $_SERVER['SERVER_NAME'] . ':20001/holan/viewer.html?studyUID=');
+    define('HTMLWORKLISTFIRST', '<a href="http://' . $_SERVER['SERVER_NAME'] . ':19898/holan/viewer.html?studyUID=');
 } else {
     define('HTMLWORKLISTFIRST', '<a href="http://' . $_SERVER['SERVER_NAME'] . ':19898/holan/viewer.html?studyUID=');
 }
