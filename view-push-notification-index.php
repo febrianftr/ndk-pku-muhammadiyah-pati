@@ -292,8 +292,7 @@ if (isset($_POST["whatsapp_url_expertise_image_pdf"]) || isset($_POST["whatsapp_
         $selectedGreeting = $greetings[array_rand($greetings)];
 
         // isi pesan utama
-        $message = "Kami dari Instalasi Radiologi RSU Fastabiq Sehat PKU Muhammadiyah menginformasikan bahwa hasil pemeriksaan radiologi Anda sudah dapat diakses.\n\n"
-            . $selectedGreeting . "\n\n"
+        $message = $selectedGreeting . "\n\n" . "Kami dari Instalasi Radiologi RSU Fastabiq Sehat PKU Muhammadiyah menginformasikan bahwa hasil pemeriksaan radiologi Anda sudah dapat diakses.\n\n"
             . "*Nama:* $pat_name\n"
             . "*No Rekam Medis:* $pat_id\n"
             . "*Tanggal Pemeriksaan:* $study_datetime\n\n"
