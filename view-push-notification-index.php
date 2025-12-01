@@ -292,14 +292,15 @@ if (isset($_POST["whatsapp_url_expertise_image_pdf"]) || isset($_POST["whatsapp_
         $selectedGreeting = $greetings[array_rand($greetings)];
 
         // isi pesan utama
-        $message = $selectedGreeting . "\n\n" . "Kami dari Instalasi Radiologi RSU Fastabiq Sehat PKU Muhammadiyah menginformasikan bahwa hasil pemeriksaan radiologi Anda sudah dapat diakses.\n\n"
+        $message = $selectedGreeting . "\n\n"
+            . "Kami dari Instalasi Radiologi RSU Fastabiq Sehat PKU Muhammadiyah menginformasikan bahwa hasil pemeriksaan radiologi Anda sudah dapat diakses.\n\n"
             . "*Nama:* $pat_name\n"
             . "*No Rekam Medis:* $pat_id\n"
             . "*Tanggal Pemeriksaan:* $study_datetime\n\n"
             // . "Anda dapat melihat hasilnya melalui tautan berikut:\n"
             // . "$message_input_whatsapp\n\n"
             . "_Hasil berupa PDF, klik tautan file untuk membuka, Hubungi kami jika ada kesulitan._\n\n"
-            . "Terima kasih,\n*Wassalamu'alaikum.*";
+            . "Terima kasih,\nWassalamu'alaikum.";
 
         $headers = [
             'headers' => [
