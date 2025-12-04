@@ -161,7 +161,7 @@ $waitingUSGDoppler2hourReguler = mysqli_fetch_assoc(mysqli_query(
 ));
 $moreThanUSGDoppler2hourReguler = $waitingUSGDoppler2hourReguler["jumlah"];
 ?>
-<style>
+<!-- <style>
 	#purchase_order tbody tr {
 		cursor: pointer;
 	}
@@ -169,7 +169,7 @@ $moreThanUSGDoppler2hourReguler = $waitingUSGDoppler2hourReguler["jumlah"];
 	#purchase_order tbody tr:hover {
 		background-color: #7fcbbb !important;
 	}
-</style>
+</style> -->
 <div class="col-12" style="padding: 0;">
 	<nav aria-label="breadcrumb">
 		<ol class="breadcrumb">
@@ -247,7 +247,7 @@ $moreThanUSGDoppler2hourReguler = $waitingUSGDoppler2hourReguler["jumlah"];
 				<?php require 'thead.php'; ?>
 			</thead>
 		</table>
-		<div id="imagePreview" style="margin-top:20px;"></div>
+		<!-- <div id="imagePreview" style="margin-top:20px;"></div> -->
 	</div>
 </div>
 <?php require 'modal.php'; ?>
@@ -326,7 +326,7 @@ $moreThanUSGDoppler2hourReguler = $waitingUSGDoppler2hourReguler["jumlah"];
 			$('.cbox').prop('checked', this.checked);
 		});
 
-		var datatable = null;
+		// var datatable = null;
 
 		fetch_data('no');
 
@@ -352,65 +352,65 @@ $moreThanUSGDoppler2hourReguler = $waitingUSGDoppler2hourReguler["jumlah"];
 				},
 			});
 
-			// ⬇️ Event klik row
-			$('#purchase_order tbody').off('click').on('click', 'tr', function() {
+			// 	// ⬇️ Event klik row
+			// 	$('#purchase_order tbody').off('click').on('click', 'tr', function() {
 
-				var data = datatable.row(this).data();
+			// 		var data = datatable.row(this).data();
 
-				if (!data) return;
+			// 		if (!data) return;
 
-				// Kolom ke-15
-				var col15 = data[15];
+			// 		// Kolom ke-15
+			// 		var col15 = data[15];
 
-				// Parse ke jQuery
-				var parsed = $(col15);
+			// 		// Parse ke jQuery
+			// 		var parsed = $(col15);
 
-				var studyUID = parsed.data("id");
+			// 		var studyUID = parsed.data("id");
 
-				// Kirim UID ini ke API DICOM / thumbnail
-				loadImageFromAPI(studyUID);
-			});
-		}
+			// 		// Kirim UID ini ke API DICOM / thumbnail
+			// 		loadImageFromAPI(studyUID);
+			// 	});
+			// }
 
-		function loadImageFromAPI(studyUID) {
+			// function loadImageFromAPI(studyUID) {
 
-			$("#imagePreview").html("<p style='color:white'>Loading image...</p>");
+			// 	$("#imagePreview").html("<p style='color:white'>Loading image...</p>");
 
-			//! JIKA MENGGUNAKAN API DCM4CHEE-ARC / OHIF
-			$.ajax({
-				url: `http://116.254.118.110:9090/dcm4chee-arc/aets/DCM4CHEE/wado?requestType=WADO&studyUID=${studyUID}`,
-				type: "GET",
-				xhrFields: {
-					responseType: 'blob' // penting untuk image binary
-				},
-				success: function(data, status, xhr) {
+			// 	//! JIKA MENGGUNAKAN API DCM4CHEE-ARC / OHIF
+			// 	$.ajax({
+			// 		url: `http://116.254.118.110:9090/dcm4chee-arc/aets/DCM4CHEE/wado?requestType=WADO&studyUID=${studyUID}`,
+			// 		type: "GET",
+			// 		xhrFields: {
+			// 			responseType: 'blob' // penting untuk image binary
+			// 		},
+			// 		success: function(data, status, xhr) {
 
-					// ⬇️ Ambil content type dari header
-					var contentType = xhr.getResponseHeader("Content-Type");
-					console.log("Content-Type:", contentType);
+			// 			// ⬇️ Ambil content type dari header
+			// 			var contentType = xhr.getResponseHeader("Content-Type");
+			// 			console.log("Content-Type:", contentType);
 
-					// ⬇️ Jika API mengembalikan image (png/jpg/jpeg)
-					if (contentType && contentType.startsWith("image/")) {
+			// 			// ⬇️ Jika API mengembalikan image (png/jpg/jpeg)
+			// 			if (contentType && contentType.startsWith("image/")) {
 
-						// Convert blob ke URL
-						var imgURL = URL.createObjectURL(data);
+			// 				// Convert blob ke URL
+			// 				var imgURL = URL.createObjectURL(data);
 
-						$("#imagePreview").html(
-							'<img src="' + imgURL + '" style="max-width:300px;border:1px solid #666;border-radius:8px;">'
-						);
+			// 				$("#imagePreview").html(
+			// 					'<img src="' + imgURL + '" style="max-width:300px;border:1px solid #666;border-radius:8px;">'
+			// 				);
 
-					} else {
-						$("#imagePreview").html("<p style='color:red'>Response is not an image.</p>");
-					}
-				},
+			// 			} else {
+			// 				$("#imagePreview").html("<p style='color:red'>Response is not an image.</p>");
+			// 			}
+			// 		},
 
-				error: function() {
-					$("#imagePreview").html("<p style='color:red'>Failed to load image.</p>");
-				}
-			});
+			// 		error: function() {
+			// 			$("#imagePreview").html("<p style='color:red'>Failed to load image.</p>");
+			// 		}
+			// 	});
 
-			//! JIKA MENGGUNAKAN API DCM4CHEE / HTML
-			// $("#imagePreview").html(`<img src="http://116.254.118.110:19898/wado?requestType=WADO&studyUID=1.2.40.0.13.1.523882.20251129.33694003615&seriesUID=1.2.276.0.7230010.3.0.3.5.1.15641797.320140028&objectUID=1.2.276.0.7230010.3.0.3.5.1.15641797.3778521787" style="max-width:300px;border:1px solid #666;border-radius:8px;">`);
+			// 	//! JIKA MENGGUNAKAN API DCM4CHEE / HTML
+			// 	// $("#imagePreview").html(`<img src="http://116.254.118.110:19898/wado?requestType=WADO&studyUID=1.2.40.0.13.1.523882.20251129.33694003615&seriesUID=1.2.276.0.7230010.3.0.3.5.1.15641797.320140028&objectUID=1.2.276.0.7230010.3.0.3.5.1.15641797.3778521787" style="max-width:300px;border:1px solid #666;border-radius:8px;">`);
 		}
 
 		function properties_data() {
